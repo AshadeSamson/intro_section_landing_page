@@ -1,0 +1,287 @@
+:root{
+  --a-white: hsl(0, 0%, 98%);
+  --m-gray: hsl(0, 0%, 41%);
+  --a-black: hsl(0, 0%, 8%);
+  --epilouge:  'Epilogue', sans-serif;
+}
+
+/* Global */
+body{
+  font-family: var(--epilouge);
+  background-color: var(--a-white);
+}
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+  color: var(--m-gray);
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 500;
+}
+a:hover{
+  color: var(--a-black);
+}
+li{
+  list-style-type: none;
+}
+
+/* Header */
+#header{
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-around;
+}
+.openmenu, .closemenu{
+  display: none;
+}
+.navigation{
+  flex-basis: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  flex-basis: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav1{
+  flex-basis: 40%;
+}
+.nav2{
+  flex-basis: 15%;
+}
+.nav2 li{
+  align-self: center;
+}
+.nav2 li a button{
+  background-color: var(--a-white);
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.nav1, .nav2{
+  display: flex;
+  justify-content: space-around;
+}
+.submenu_p{
+  position: relative;
+  text-align: justify;
+}
+.submenu1,.submenu2{
+  display: none;
+  position: absolute;
+  background-color: var(--a-white);
+  border-radius: 5px;
+  box-shadow: 0 0 10px  1px var(--m-gray);
+  min-width: 150px;
+}
+.submenu1{
+  top: 100%;
+  right: 0;
+}
+.submenu2{
+  top: 100%;
+  left: 0;
+  min-width: 120px;
+}
+.submenu_p .submenu1 li a, .submenu_p .submenu2 li a{
+  padding: 10px;
+  width: 100%;
+}
+
+/* Hero */
+#main{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.heroimg img{
+  width: 100%;
+  height: auto;
+}
+.herotext{
+  flex-basis: 40%;
+  text-align: left;
+}
+.heroimg{
+  flex-basis: 50%;
+}
+.herotext h1{
+  font-weight: 700;
+  font-size: 4.5rem;
+  padding-top: 20%;
+  padding-bottom: 25px;
+}
+.paragraph p{
+  color: var(--m-gray);
+  font-size: 1.1rem;
+  padding-bottom: 50px;
+}
+.herobtn{
+  background-color: var(--a-black);
+  color: var(--a-white);
+  width: 120px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20%;
+}
+.herobtn:hover{
+  background-color: var(--a-white);
+  color: var(--a-black);
+}
+.img{
+  display: inline-block;
+  width: 23%;
+  padding: 10px;
+}
+.clientimg{
+  text-align: center;
+}
+.clientimg img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 920px){
+  .herotext h1{
+    font-weight: 700;
+    font-size: 3rem
+  }
+  .paragraph p{
+    font-size: 1rem;
+  }
+  .navigation{
+    flex-basis: 85%;
+  }
+  .logo{
+    flex-basis: 15%;
+  }
+  .nav2{
+    flex-basis: 25%;
+  }
+}
+
+
+@media (max-width: 820px){
+  .nav1{
+    flex-basis: 50%;
+  }
+  .nav2{
+    flex-basis: 30%;
+  }
+}
+
+
+@media (max-width: 760px){
+  /* Header */
+  .logo{
+    flex-basis: 100%;
+    justify-content: space-between;
+  }
+
+  a, .nav2 li a button{
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+  }
+  .nav2 li a button{
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+  }
+  .openmenu, .closemenu{
+    display: block;
+  }
+  .closemenu{
+    align-self: flex-end;
+  }
+  .navigation{
+    display: none;
+    height: 150%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 20%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--a-white);
+  }
+  .nav1, .nav2{
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+  }
+  .nav1{
+    flex-basis: 50%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .nav2{
+    flex-basis: 30%;
+  }
+  .nav1 li a, .nav2 li a{
+    padding-bottom: 20px;
+  }
+
+  .submenu1,.submenu2{
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 15px;
+  }
+  .submenu1 li a,.submenu2 li a{
+    font-size: 1.25rem;
+  }
+ 
+
+  /* Hero/Body */
+  #main{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-top: 25px;
+    padding: 0;
+  }
+  .herotext{
+    text-align: center;
+    margin: auto;
+  }
+  .herotext h1{
+    font-weight: 700;
+    font-size: 2.5rem
+  }
+  .paragraph p{
+    font-size: 18px;
+  }
+  .herobtn{
+    margin-bottom: 10%;
+  }
+  .clientimg img{
+    margin-bottom: 25px;
+}
+}
